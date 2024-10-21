@@ -1,32 +1,26 @@
 import { useEffect, useState } from "react";
 import "./index.css";
-import { useTranslation } from "react-i18next";
-import TestComponent from "../../components/TestComponent/TestComponent";
-import { changeIdiom } from "../../redux/configSlice";
-import { useDispatch } from "react-redux";
+import Header from "../../components/Header/Header";
+import CompaniesService, {
+  CompaniesResponse,
+} from "../../services/companies.service";
+import Body from "../../components/Body/Body";
 
 export default function Home() {
-  const { t } = useTranslation();
-  const [count, setCount] = useState(0);
-  const [idiom, setIdiom] = useState("us");
-  const dispatch = useDispatch();
+  const [companies, setCompanies] = useState<CompaniesResponse>([]);
 
   useEffect(() => {
-    dispatch(changeIdiom(idiom));
-  }, [dispatch, idiom]);
+    CompaniesService.getcompanies((companiesResponse: CompaniesResponse) =>
+      setCompanies(companiesResponse)
+    );
+  }, []);
 
   return (
     <>
-      {/* <Head /> */}
-      <TestComponent children={<p>{t("test")} component children</p>} />
-      <div className="card">
-        <button onClick={() => setIdiom(idiom === "us" ? "br" : "us")}>
-          Idioma
-        </button>
-        <button onClick={() => setCount((current) => current + 1)}>
-          count is {count}
-        </button>
-      </div>
+      <Header companies={companies} />
+      <Body>
+        <h1>Ativos</h1>
+      </Body>
     </>
   );
 }

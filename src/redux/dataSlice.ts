@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  data: "",
+  company: "",
 };
 
 export const slice = createSlice({
   name: "data",
   initialState: initialState,
   reducers: {
-    dataChange(state, { payload }) {
-      return { ...state, data: payload };
+    companyChange(state, { payload }) {
+      return { ...state, company: payload };
     },
   },
 });
 
-export const { dataChange } = slice.actions;
-export const selectData = (state: { data: string }) => state.data;
+export const { companyChange } = slice.actions;
+export const selectCompany = (state: { company: string }) => state.company;
 export default slice.reducer;

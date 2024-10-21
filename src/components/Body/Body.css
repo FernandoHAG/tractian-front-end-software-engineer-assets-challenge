@@ -1,0 +1,21 @@
+.body {
+  --padding-body: 10px;
+  width: calc(100vw - var(--padding-body) * 2);
+  height: calc(100vh - 70px);
+  padding: var(--padding-body);
+
+  .paper {
+    border: 1px solid var(--body-border-color);
+    background-color: var(--body-color);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    padding: var(--padding-body);
+    height: -webkit-fill-available;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}

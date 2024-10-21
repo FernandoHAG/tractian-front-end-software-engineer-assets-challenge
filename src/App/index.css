@@ -1,11 +1,51 @@
 :root {
-  font-family: Geist Sans, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* COLORS */
+  --main-background: #e3eaef;
+  --body-color: #ffffff;
+  --body-border-color: #d8dfe6;
+  --text-color: #24292f;
+  --header-color: #17192d;
+  --selected-background-color: #2188ff;
+  --selected-text-color: #ffffff;
+  --title-text-color: #24292f;
+  --critical-icon-color: #ed3833;
+  --energy-icon-color: #52c41a;
+
+  /* BUTTOMS */
+  --buttom-blue-background-color: #023b78;
+  --buttom-blue-text-color: #ffffff;
+  --buttom-blue-icon-color: #ffffff;
+  --buttom-blue-hover-background-color: #2188ff;
+  --buttom-blue-hover-text-color: #ffffff;
+  --buttom-blue-hover-icon-color: #ffffff;
+
+  --buttom-white-background-color: #d8dfe6;
+  --buttom-white-text-color: #77818c;
+  --buttom-white-icon-color: #2188ff;
+  --buttom-white-hover-background-color: #2188ff;
+  --buttom-white-hover-text-color: #ffffff;
+  --buttom-white-hover-icon-color: #ffffff;
+
+  /* FONTS */
+  --font-family-normal: Geist Sans, Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  --font-size-normal: 1rem;
+  --font-weight-normal: 400;
+  --line-height-normal: 1.5rem;
+
+  /* Animations */
+  --animate-duration: 0.15s;
+  --animate-delay: 0s;
+  --animate-repeat: 1;
+
+  font-family: var(--font-family-normal);
+  line-height: var(--line-height-normal);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.8);
-  background-color: #242424;
+  color: var(--text-color);
+  background-color: var(--main-background);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,6 +55,53 @@
 
 body {
   margin: 0px;
+}
+
+button {
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border: 0px;
+  padding: 7px;
+  transition: var(--animate-duration);
+  -webkit-transition: var(--animate-duration);
+  -moz-transition: var(--animate-duration);
+  -ms-transition: var(--animate-duration);
+  -o-transition: var(--animate-duration);
+  background-color: var(--buttom-blue-background-color);
+  color: var(--buttom-blue-text-color);
+  i {
+    color: var(--buttom-blue-icon-color);
+    margin-right: 0.2rem;
+  }
+
+  &:hover {
+    background-color: var(--buttom-blue-hover-background-color);
+    color: var(--buttom-blue-hover-text-color);
+
+    i {
+      color: var(--buttom-blue-hover-icon-color);
+    }
+  }
+
+  &.white {
+    background-color: var(--buttom-white-background-color);
+    color: var(--buttom-white-text-color);
+    i {
+      color: var(--buttom-white-icon-color);
+    }
+
+    &:hover {
+      background-color: var(--buttom-white-hover-background-color);
+      color: var(--buttom-white-hover-text-color);
+
+      i {
+        color: var(--buttom-white-hover-icon-color);
+      }
+    }
+  }
 }
 
 .unselectable {
@@ -28,4 +115,17 @@ body {
 
 .undraggable {
   pointer-events: none;
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion) {
+  * {
+    --animate-duration: 0.01ms !important;
+    --animate-delay: 0.01ms !important;
+    --animate-repeat: 1 !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
