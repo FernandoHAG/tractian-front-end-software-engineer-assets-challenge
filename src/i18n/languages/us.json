@@ -1,3 +1,7 @@
 {
-  "test": "Test"
+  "Assets": "Assets",
+  "energy-sensors": "Energy Sensors",
+  "critical": "Critical",
+  "search-placeholder": "Search Assets or Locations",
+  "no-company-selected": "Select a company"
 }

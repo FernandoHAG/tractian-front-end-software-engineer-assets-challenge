@@ -1,15 +1,19 @@
 import "./Header.css";
 import logo from "../../assets/logo.svg";
 import gold from "../../assets/gold.svg";
+import { dataType, selectedCompanyIdChange } from "../../redux/dataSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { CompaniesResponse } from "../../services/companies.service";
 
-type propsType = {
-  companies: CompaniesResponse;
-};
+type propsType = {};
 
-const Header = ({ companies }: propsType) => {
-  const selectCompany = (selectedCompanyId: string) => {
-    console.log(selectedCompanyId);
+const Header = ({}: propsType) => {
+  const dispatch = useDispatch();
+  const companies: CompaniesResponse = useSelector(
+    (state: { data: dataType }) => state.data.companies
+  );
+  const onSelectCompany = (selectedCompanyId: string) => {
+    dispatch(selectedCompanyIdChange(selectedCompanyId));
   };
 
   return (
@@ -17,7 +21,7 @@ const Header = ({ companies }: propsType) => {
       <img src={logo} alt="logo" />
       <div className="menu">
         {companies.map((company) => (
-          <button key={company.id} onClick={() => selectCompany(company.id)}>
+          <button key={company.id} onClick={() => onSelectCompany(company.id)}>
             <i>
               <img src={gold} alt="gold" />
             </i>

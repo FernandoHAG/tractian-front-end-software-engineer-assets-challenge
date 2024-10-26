@@ -1,0 +1,87 @@
+.ItemTree {
+  padding: 10px;
+  height: calc(100vh - 225px);
+  overflow: auto;
+
+  .icon {
+    width: 20px;
+  }
+
+  .no-company-selected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #777;
+  }
+
+  .tree-node {
+    margin-left: 10px; /* Indenta para parecer uma árvore */
+    margin-bottom: 5px;
+  }
+
+  .node-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--animate-duration);
+    -webkit-transition: var(--animate-duration);
+    -moz-transition: var(--animate-duration);
+    -ms-transition: var(--animate-duration);
+    -o-transition: var(--animate-duration);
+
+    p {
+      font-weight: var(--tree-item-weight);
+      color: var(--tree-item-color);
+      font-size: var(--tree-item-size);
+      line-height: var(--tree-item-line-height);
+      text-wrap: nowrap;
+
+      img {
+        margin-bottom: -5px;
+      }
+    }
+
+    &:hover {
+      background-color: var(--selected-background-color);
+
+      p {
+        color: var(--body-color);
+
+        img {
+          filter: brightness(10);
+          -webkit-filter: brightness(10);
+        }
+      }
+    }
+  }
+
+  .toggle-button {
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .toggle-button:focus {
+    outline: none;
+  }
+
+  .tree-children {
+    margin-left: 15px; /* Indenta mais um nível */
+    border-left: 1px solid #ddd;
+    padding-left: 10px;
+  }
+
+  .location {
+  }
+
+  .asset {
+  }
+
+  .component {
+    margin-left: 20px; /* Indenta para se diferenciar */
+  }
+}

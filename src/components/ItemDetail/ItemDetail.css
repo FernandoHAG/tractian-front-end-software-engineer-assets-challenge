@@ -1,0 +1,8 @@
+.ItemDetail {
+  width: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  border: 1px solid var(--body-border-color);
+  border-radius: 5px;
+}

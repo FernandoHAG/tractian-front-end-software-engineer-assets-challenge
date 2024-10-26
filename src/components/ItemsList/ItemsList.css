@@ -1,0 +1,35 @@
+.ItemsList {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  height: auto;
+  border: 1px solid var(--body-border-color);
+  border-radius: 5px;
+  min-width: 250px;
+
+  .searchbar-container {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid var(--body-border-color);
+    padding: 5px;
+    height: 45px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    input {
+      width: 100%;
+      border: 0px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      color: #363c44;
+      background-color: transparent;
+    }
+  }
+}

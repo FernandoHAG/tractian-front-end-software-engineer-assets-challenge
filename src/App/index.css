@@ -19,12 +19,19 @@
   --buttom-blue-hover-text-color: #ffffff;
   --buttom-blue-hover-icon-color: #ffffff;
 
-  --buttom-white-background-color: #d8dfe6;
+  --buttom-white-background-color: #ffffff;
   --buttom-white-text-color: #77818c;
   --buttom-white-icon-color: #2188ff;
   --buttom-white-hover-background-color: #2188ff;
   --buttom-white-hover-text-color: #ffffff;
   --buttom-white-hover-icon-color: #ffffff;
+  --buttom-white-border-color: #d8dfe6;
+
+  /* TREE ITEMS */
+  --tree-item-color: #17192d;
+  --tree-item-weight: 400;
+  --tree-item-size: 0.875rem;
+  --tree-item-line-height: 1.375rem;
 
   /* FONTS */
   --font-family-normal: Geist Sans, Inter, system-ui, Avenir, Helvetica, Arial,
@@ -91,7 +98,14 @@ button {
     color: var(--buttom-white-text-color);
     i {
       color: var(--buttom-white-icon-color);
+      margin: 0px;
+
+      img {
+        margin-bottom: -3px;
+        margin-right: 5px;
+      }
     }
+    border: 1px solid var(--buttom-white-border-color);
 
     &:hover {
       background-color: var(--buttom-white-hover-background-color);
@@ -99,9 +113,31 @@ button {
 
       i {
         color: var(--buttom-white-hover-icon-color);
+
+        img {
+          filter: brightness(10);
+          -webkit-filter: brightness(10);
+        }
       }
     }
   }
+}
+
+h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+  text-align: left;
+  color: var(--text-color);
+  margin: 0px;
+}
+
+p {
+  margin: 0px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.375rem;
+  text-align: left;
 }
 
 .unselectable {

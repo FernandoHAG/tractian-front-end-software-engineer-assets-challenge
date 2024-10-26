@@ -1,3 +1,7 @@
 {
-  "test": "Teste"
+  "Assets": "Ativos",
+  "energy-sensors": "Sensores de Energia",
+  "critical": "Crítico",
+  "search-placeholder": "Buscar Ativo ou Local",
+  "no-company-selected": "Selecione uma empresa"
 }

@@ -1,25 +1,30 @@
-import { useEffect, useState } from "react";
-import "./index.css";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import Actions from "../../components/Actions/Actions";
+import Body from "../../components/Body/Body";
 import Header from "../../components/Header/Header";
+import { companiesChange } from "../../redux/dataSlice";
 import CompaniesService, {
   CompaniesResponse,
 } from "../../services/companies.service";
-import Body from "../../components/Body/Body";
+import "./index.css";
+import Main from "../../components/Main/Main";
 
 export default function Home() {
-  const [companies, setCompanies] = useState<CompaniesResponse>([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    CompaniesService.getcompanies((companiesResponse: CompaniesResponse) =>
-      setCompanies(companiesResponse)
+    CompaniesService.getCompanies((companiesResponse: CompaniesResponse) =>
+      dispatch(companiesChange(companiesResponse))
     );
   }, []);
 
   return (
     <>
-      <Header companies={companies} />
+      <Header />
       <Body>
-        <h1>Ativos</h1>
+        <Actions />
+        <Main />
       </Body>
     </>
   );

@@ -1,0 +1,7 @@
+.Main {
+  display: flex;
+  flex-direction: row;
+  height: -webkit-fill-available;
+  padding: 10px;
+  gap: 10px;
+}
