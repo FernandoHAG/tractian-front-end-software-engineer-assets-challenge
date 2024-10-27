@@ -18,6 +18,7 @@ type TreeNode = {
   status?: string | null;
   sensorType?: string | null;
   sensorId?: string | null;
+  gatewayId?: string | null;
 };
 
 const ItemTree: React.FC = () => {
@@ -72,6 +73,7 @@ const ItemTree: React.FC = () => {
         children: nodeType === "asset" ? [] : undefined,
         sensorType: asset.sensorType || null,
         sensorId: asset.sensorId || null,
+        gatewayId: asset.gatewayId || null,
       };
       itemsMap.set(asset.id, assetNode);
     });
