@@ -4,8 +4,12 @@ import CompaniesService, {
   AssetsResponse,
   LocationsResponse,
 } from "../../services/companies.service";
-import { useSelector } from "react-redux";
-import { dataType } from "../../redux/dataSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  assetsChange,
+  dataType,
+  selectedComponentIdChange,
+} from "../../redux/dataSlice";
 import { useTranslation } from "react-i18next";
 
 type TreeNode = {
@@ -23,6 +27,7 @@ type TreeNode = {
 
 const ItemTree: React.FC = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
   const selectedCompanyId = useSelector(
     (state: { data: dataType }) => state.data.selectedCompanyId
   );
@@ -36,6 +41,7 @@ const ItemTree: React.FC = () => {
         CompaniesService.getCompanyAssets(selectedCompanyId),
       ])
         .then(([locations, assets]) => {
+          dispatch(assetsChange(assets));
           setTreeData(buildTree(locations, assets));
         })
         .catch((error) => {
@@ -164,8 +170,7 @@ const ItemTree: React.FC = () => {
     if (node.type !== "component") {
       toggleNode(node.id);
     } else {
-      // setSelectedComponentId(node.id);
-      console.log("Selected component:", node);
+      dispatch(selectedComponentIdChange(node.id));
     }
   };
 

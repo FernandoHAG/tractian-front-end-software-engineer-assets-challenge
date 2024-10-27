@@ -3,5 +3,10 @@
   "energy-sensors": "Energy Sensors",
   "critical": "Critical",
   "search-placeholder": "Search Assets or Locations",
-  "no-company-selected": "Select a company"
+  "no-company-selected": "Select a company",
+  "equipment-type": "Equipment Type",
+  "responsible": "Responsible",
+  "sensor": "Sensor",
+  "receptor": "Receptor",
+  "add-image": "Add image of Asset"
 }

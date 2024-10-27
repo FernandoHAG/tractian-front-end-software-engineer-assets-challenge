@@ -3,5 +3,10 @@
   "energy-sensors": "Sensores de Energia",
   "critical": "Crítico",
   "search-placeholder": "Buscar Ativo ou Local",
-  "no-company-selected": "Selecione uma empresa"
+  "no-company-selected": "Selecione uma empresa",
+  "equipment-type": "Tipo de Equipamento",
+  "responsible": "Responsável",
+  "sensor": "Sensor",
+  "receptor": "Receptor",
+  "add-image": "Adicionar imagem do Ativo"
 }
