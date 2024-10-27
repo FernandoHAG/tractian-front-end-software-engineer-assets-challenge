@@ -15,8 +15,9 @@ export type AssetsResponse = Array<{
   name: string;
   locationId: string | null;
   parentId: string | null;
-  sensorType?: string;
-  status?: string;
+  sensorType?: string | null;
+  sensorId?: string | null;
+  status?: string | null;
 }>;
 
 async function getCompanies(

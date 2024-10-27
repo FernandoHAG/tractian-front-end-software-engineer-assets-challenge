@@ -16,6 +16,8 @@ type TreeNode = {
   parentId?: string | null;
   locationId?: string | null;
   status?: string | null;
+  sensorType?: string | null;
+  sensorId?: string | null;
 };
 
 const ItemTree: React.FC = () => {
@@ -68,6 +70,8 @@ const ItemTree: React.FC = () => {
         locationId: asset.locationId || null,
         status: asset.status || null,
         children: nodeType === "asset" ? [] : undefined,
+        sensorType: asset.sensorType || null,
+        sensorId: asset.sensorId || null,
       };
       itemsMap.set(asset.id, assetNode);
     });
@@ -159,7 +163,7 @@ const ItemTree: React.FC = () => {
       toggleNode(node.id);
     } else {
       // setSelectedComponentId(node.id);
-      console.log("Selected component:", node.id);
+      console.log("Selected component:", node);
     }
   };
 
